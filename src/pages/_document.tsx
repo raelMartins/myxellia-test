@@ -8,6 +8,10 @@ export default function Document() {
           href='https://fonts.cdnfonts.com/css/euclid-circular-b'
           rel='stylesheet'
         />
+        <link
+          href='https://fonts.cdnfonts.com/css/proxima-nova'
+          rel='stylesheet'
+        ></link>
       </Head>
       <body>
         <Main />
