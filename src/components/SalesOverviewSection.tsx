@@ -1,5 +1,14 @@
-import { Box, Button, Divider, Flex, Heading, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Divider,
+  Flex,
+  Grid,
+  Heading,
+  Text
+} from '@chakra-ui/react';
 import { TabLink } from 'layout/header/TabLink';
+import { SalesStat } from './SalesStat';
 
 export const SalesOverviewSection = () => {
   return (
@@ -36,8 +45,34 @@ export const SalesOverviewSection = () => {
       <Divider
         border={'.13rem solid #e4e4e4'}
         ml={'-2.2rem'}
+        mb={'1.6rem'}
         width={`calc(100% + 4.2rem)`}
       />
+      <Grid templateColumns={'1.3fr 1fr'}>
+        <Box></Box>
+        <Grid templateColumns={'1fr 1fr'} gap={'1.4rem 1.6rem'}>
+          <SalesStat
+            color='#4545FE'
+            label='Balance'
+            percentage={'40'}
+            amount={20}
+          />
+          <SalesStat
+            color='#12D8A0'
+            label='deposit'
+            percentage={'100'}
+            amount={50}
+          />
+          <SalesStat label='purchase' percentage={'0'} amount={0} two_tone />
+          <SalesStat
+            color='#FF6A6A'
+            label='withdrawal'
+            percentage={'60'}
+            amount={30}
+            type='decrease'
+          />
+        </Grid>
+      </Grid>
     </>
   );
 };
