@@ -8,6 +8,7 @@ import {
   Text
 } from '@chakra-ui/react';
 import { CustomersOverviewSection } from 'components/CustomersOverviewSection';
+import { ListingOverviewSection } from 'components/ListingOverviewSection';
 import { PropertyOverviewSection } from 'components/PropertyOverviewSection';
 import { SalesOverviewSection } from 'components/SalesOverviewSection';
 import { PageHeader } from 'layout/PageHeader';
@@ -66,10 +67,11 @@ export default function Home() {
             </Flex>
             <Flex gap='2rem' minH='32.5rem' className={styles.inline_layout}>
               <Flex
+                direction={'column'}
                 className={`${styles.overview} ${styles.listings_overview}`}
                 flex={475}
               >
-                <Heading fontSize='2rem'>Listing Overview</Heading>
+                <ListingOverviewSection />
               </Flex>
               <Flex
                 className={`${styles.overview} ${styles.total_balance}`}
