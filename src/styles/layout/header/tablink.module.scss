@@ -1,0 +1,13 @@
+@import '../../mixins.module.scss';
+
+.tablink {
+  .label {
+    display: none;
+  }
+  @include laptop {
+    min-width: 14.8rem;
+    .label {
+      display: inline;
+    }
+  }
+}
