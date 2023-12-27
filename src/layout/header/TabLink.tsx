@@ -15,7 +15,7 @@ export const TabLink = ({
 }) => {
   return (
     <Link
-      href='/'
+      href='#'
       display='flex'
       alignItems='center'
       justifyContent='center'

@@ -3,22 +3,23 @@ import {
   Stat,
   StatHelpText,
   StatLabel,
-  StatNumber
+  StatNumber,
+  Text
 } from '@chakra-ui/react';
 import { DecreaseStatArrow, IncreaseStatArrow } from './SVGAssets';
 
 export const SalesStat = ({
   type = 'increase',
   percentage = 0,
-  label,
+  label = '',
   amount = 0,
   two_tone = false,
   color = 'blue'
 }: {
   type?: string;
   percentage?: number | string;
-  label?: string;
-  amount?: number;
+  label: string;
+  amount: number;
   two_tone?: boolean;
   color?: string;
 }) => {
@@ -75,9 +76,15 @@ export const SalesStat = ({
         fontSize={'1rem'}
         fontWeight={'500'}
       >
-        <StatLabel textTransform={'capitalize'} color={'black'}>
-          {label}
-        </StatLabel>
+        <span
+          style={{
+            textTransform: 'capitalize',
+            color: 'black',
+            fontSize: 'inherit'
+          }}
+        >
+          {label || 'Label'}
+        </span>
         {type === 'increase' ? <IncreaseStatArrow /> : <DecreaseStatArrow />}
         {percentage}%
       </StatHelpText>

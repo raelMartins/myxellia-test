@@ -9,8 +9,39 @@ import {
 } from '@chakra-ui/react';
 import { TabLink } from 'layout/header/TabLink';
 import { SalesStat } from './SalesStat';
+import { Chart as ChartJS, registerables } from 'chart.js';
+import { Line } from 'react-chartjs-2';
+import {
+  generateColor,
+  generate_random_number_array
+} from 'utilities/helpers/utils';
+import { months } from 'utilities/helpers/placeholder_data';
+ChartJS.register(...registerables);
 
 export const SalesOverviewSection = () => {
+  const color = generateColor();
+
+  const data = {
+    labels: months.slice(0, 9),
+    datasets: [
+      {
+        label: `Balance`,
+        data: generate_random_number_array({ length: 9, max: 100 })
+      },
+      {
+        label: `Deposit`,
+        data: generate_random_number_array({ length: 9, max: 100 })
+      },
+      {
+        label: `Purchase`,
+        data: generate_random_number_array({ length: 9, max: 100 })
+      },
+      {
+        label: `Withdrawal`,
+        data: generate_random_number_array({ length: 9, max: 100 })
+      }
+    ]
+  };
   return (
     <>
       <Flex mb={'1.7rem'} justify={'space-between'} alignItems={'flex-end'}>
@@ -49,11 +80,27 @@ export const SalesOverviewSection = () => {
         width={`calc(100% + 4.2rem)`}
       />
       <Grid templateColumns={'1.3fr 1fr'}>
-        <Box></Box>
+        <Box>
+          <Line
+            data={data}
+            options={{
+              responsive: true,
+              plugins: {
+                legend: {
+                  position: 'bottom'
+                },
+                title: {
+                  display: false,
+                  text: 'Chart.js Line Chart'
+                }
+              }
+            }}
+          />
+        </Box>
         <Grid templateColumns={'1fr 1fr'} gap={'1.4rem 1.6rem'}>
           <SalesStat
             color='#4545FE'
-            label='Balance'
+            label='balance'
             percentage={'40'}
             amount={20}
           />
