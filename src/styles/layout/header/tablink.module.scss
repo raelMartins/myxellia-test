@@ -4,7 +4,7 @@
   .label {
     display: none;
   }
-  @include laptop {
+  @include desktop {
     min-width: 14.8rem;
     .label {
       display: inline;

@@ -35,7 +35,7 @@ export const PageHeader = () => {
       <Flex
         className={styles.header_top}
         backgroundColor='#191919'
-        padding='1.5rem 7.8rem'
+        // padding='1.5rem 7.8rem'
         color='white'
         justifyContent='space-between'
         alignItems='center'
@@ -78,7 +78,7 @@ export const PageHeader = () => {
       <Flex
         className={styles.navigation}
         gap='1rem'
-        padding='1.5rem 7.8rem'
+        // padding='1.5rem 7.8rem'
         alignItems='center'
         backgroundColor='white'
       >

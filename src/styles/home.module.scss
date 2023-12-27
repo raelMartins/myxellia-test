@@ -4,9 +4,18 @@
   background-color: #fbfcfc;
   min-height: 100vh;
   .content_body {
-    padding: 1.9rem 7.8rem;
+    padding: 1.9rem 2rem;
+    @include tablet {
+      padding: 1.9rem 7.8rem;
+    }
   }
   .overview {
     @include section_container_style;
+  }
+  .inline_layout {
+    flex-direction: column;
+    @include laptop {
+      flex-direction: row;
+    }
   }
 }

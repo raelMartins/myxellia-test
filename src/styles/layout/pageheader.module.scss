@@ -1,6 +1,19 @@
 @import '../mixins.module.scss';
 
 .page_header {
+  .navigation,
+  .header_top {
+    padding: 1.5rem 2rem;
+    @include tablet {
+      padding: 1.5rem 7.8rem;
+    }
+  }
+  .user_actions {
+    display: none;
+    @include tablet {
+      display: flex;
+    }
+  }
   .logo {
     h1 {
       font-size: 1.4rem;

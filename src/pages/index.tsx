@@ -7,6 +7,8 @@ import {
   Heading,
   Text
 } from '@chakra-ui/react';
+import { CustomersOverviewSection } from 'components/CustomersOverviewSection';
+import { PropertyOverviewSection } from 'components/PropertyOverviewSection';
 import { SalesOverviewSection } from 'components/SalesOverviewSection';
 import { PageHeader } from 'layout/PageHeader';
 import { TabLink } from 'layout/header/TabLink';
@@ -39,7 +41,7 @@ export default function Home() {
             Welcome to your Dashboard
           </Text>
           <Flex direction='column' gap='2rem' mt='2rem'>
-            <Flex gap='2rem' minH='32.5rem'>
+            <Flex gap='2rem' minH='32.5rem' className={styles.inline_layout}>
               <Flex
                 className={`${styles.overview} ${styles.sales_overview}`}
                 flex={856}
@@ -48,17 +50,21 @@ export default function Home() {
                 <SalesOverviewSection />
               </Flex>
               <Flex gap='1.7rem' direction='column' flex={407}>
-                <Flex
+                <Box
                   className={`${styles.overview} ${styles.property_overview}`}
                   flex={1}
-                ></Flex>
-                <Flex
-                  className={`${styles.overview} ${styles.cutomer_overvview}`}
+                >
+                  <PropertyOverviewSection />
+                </Box>
+                <Box
+                  className={`${styles.overview} ${styles.customer_overvview}`}
                   flex={1}
-                ></Flex>
+                >
+                  <CustomersOverviewSection />
+                </Box>
               </Flex>
             </Flex>
-            <Flex gap='2rem' minH='32.5rem'>
+            <Flex gap='2rem' minH='32.5rem' className={styles.inline_layout}>
               <Flex
                 className={`${styles.overview} ${styles.listings_overview}`}
                 flex={475}
