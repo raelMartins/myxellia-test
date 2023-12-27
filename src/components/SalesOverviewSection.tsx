@@ -23,6 +23,7 @@ export const SalesOverviewSection = () => {
           backgroundColor={'white'}
           padding={'2.2rem 3.7rem'}
           fontSize={'1.2rem'}
+          _hover={{ backgroundColor: '#555555', color: 'white' }}
         >
           View Transactions
         </Button>

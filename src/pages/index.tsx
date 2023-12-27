@@ -11,6 +11,9 @@ import { CustomersOverviewSection } from 'components/CustomersOverviewSection';
 import { ListingOverviewSection } from 'components/ListingOverviewSection';
 import { PropertyOverviewSection } from 'components/PropertyOverviewSection';
 import { SalesOverviewSection } from 'components/SalesOverviewSection';
+import { TopSellingSection } from 'components/TopSellingSection';
+import { TotalBalanceSection } from 'components/TotalBalanceSection';
+import { VirtualAssistantPopup } from 'components/Widgets';
 import { PageHeader } from 'layout/PageHeader';
 import { TabLink } from 'layout/header/TabLink';
 import Head from 'next/head';
@@ -73,17 +76,22 @@ export default function Home() {
               >
                 <ListingOverviewSection />
               </Flex>
-              <Flex
+              <Box
                 className={`${styles.overview} ${styles.total_balance}`}
                 flex={418}
-              ></Flex>
-              <Flex
+              >
+                <TotalBalanceSection />
+              </Box>
+              <Box
                 className={`${styles.overview} ${styles.top_selling}`}
                 flex={350}
-              ></Flex>
+              >
+                <TopSellingSection />
+              </Box>
             </Flex>
           </Flex>
         </Container>
+        <VirtualAssistantPopup />
       </main>
     </>
   );
