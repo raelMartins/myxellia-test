@@ -12,6 +12,10 @@ export default function App({ Component, pageProps }: AppProps) {
           href='https://fonts.cdnfonts.com/css/euclid-circular-b'
           rel='stylesheet'
         />
+        <link
+          href='https://fonts.cdnfonts.com/css/proxima-nova'
+          rel='stylesheet'
+        ></link>
       </Head>
       <ChakraProvider>
         <Component {...pageProps} />
