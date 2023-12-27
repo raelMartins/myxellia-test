@@ -1,0 +1,8 @@
+@import '../mixins.module.scss';
+
+.sales_chart_data {
+  grid-template-columns: 1fr;
+  @include laptop {
+    grid-template-columns: 1.3fr 1fr;
+  }
+}

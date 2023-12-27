@@ -16,6 +16,7 @@ import {
   generate_random_number_array
 } from 'utilities/helpers/utils';
 import { months } from 'utilities/helpers/placeholder_data';
+import styles from 'styles/components/salesoverviewsection.module.scss';
 ChartJS.register(...registerables);
 
 export const SalesOverviewSection = () => {
@@ -44,7 +45,12 @@ export const SalesOverviewSection = () => {
   };
   return (
     <>
-      <Flex mb={'1.7rem'} justify={'space-between'} alignItems={'flex-end'}>
+      <Flex
+        mb={'1.7rem'}
+        justify={'space-between'}
+        alignItems={'flex-end'}
+        gap={'1rem'}
+      >
         <Box>
           <Heading fontSize='2rem'>Sales Overview</Heading>
           <Text
@@ -79,7 +85,10 @@ export const SalesOverviewSection = () => {
         mb={'1.6rem'}
         width={`calc(100% + 4.2rem)`}
       />
-      <Grid templateColumns={'1.3fr 1fr'}>
+      <Grid
+        // templateColumns={'1.3fr 1fr'}
+        className={styles.sales_chart_data}
+      >
         <Box>
           <Line
             data={data}
