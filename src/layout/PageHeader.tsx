@@ -1,22 +1,9 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  Input,
-  Link,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-  Text
-} from '@chakra-ui/react';
+import { Flex, Input, Text } from '@chakra-ui/react';
 import {
   AccountDropDown,
   AccountIcon,
   AccountPhotoIcon,
   AddNewIcon,
-  CalendarIcon,
   HomeIcon,
   ListingsIcon,
   NotificationIcon,
@@ -28,6 +15,7 @@ import {
 import styles from 'styles/layout/pageheader.module.scss';
 import { TabLink } from './header/TabLink';
 import Image from 'next/image';
+import { CustomCalendar } from 'components/CustomCalendar';
 
 export const PageHeader = () => {
   return (
@@ -65,7 +53,8 @@ export const PageHeader = () => {
             alignItems='center'
           >
             <AddNewIcon />
-            <CalendarIcon />
+            {/* <CalendarIcon /> */}
+            <CustomCalendar />
             <NotificationIcon />
           </Flex>
           <Flex className={styles.user_info} gap='1.4rem' alignItems='center'>
