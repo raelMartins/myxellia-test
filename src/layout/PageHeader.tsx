@@ -80,6 +80,7 @@ export const PageHeader = () => {
         gap='1rem'
         padding='1.5rem 7.8rem'
         alignItems='center'
+        backgroundColor='white'
       >
         <TabLink icon={<HomeIcon />} label='Dashboard' active />
         <TabLink icon={<ListingsIcon />} label='Listings' />

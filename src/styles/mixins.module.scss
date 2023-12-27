@@ -29,3 +29,11 @@
     @content;
   }
 }
+
+@mixin section_container_style {
+  border-radius: 1.6rem;
+  background: #fff;
+  /* Low shadow */
+  box-shadow: 0rem 0.4rem 0.8rem 0rem rgba(0, 0, 0, 0.02);
+  padding: 1.6rem 2.2rem;
+}

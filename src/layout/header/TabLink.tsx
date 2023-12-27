@@ -5,11 +5,13 @@ import styles from 'styles/layout/header/tablink.module.scss';
 export const TabLink = ({
   icon,
   label,
-  active = false
+  active = false,
+  noicon = false
 }: {
   icon: ReactNode;
   label: String;
   active?: Boolean;
+  noicon?: boolean;
 }) => {
   return (
     <Link
@@ -24,9 +26,16 @@ export const TabLink = ({
       _hover={{ backgroundColor: '#f5f5f5' }}
       backgroundColor={active ? '#f5f5f5' : 'transparent'}
       className={styles.tablink}
+      style={noicon ? { minWidth: 'max-content' } : {}}
     >
-      <span className={styles.icon}>{icon}</span>
-      <span className={styles.label}>{label}</span>
+      {noicon ? (
+        <span className={styles.icon}>{label}</span>
+      ) : (
+        <>
+          <span className={styles.icon}>{icon}</span>
+          <span className={styles.label}>{label}</span>
+        </>
+      )}
     </Link>
   );
 };

@@ -1,4 +1,15 @@
+import {
+  Box,
+  Button,
+  Container,
+  Divider,
+  Flex,
+  Heading,
+  Text
+} from '@chakra-ui/react';
+import { SalesOverviewSection } from 'components/SalesOverviewSection';
 import { PageHeader } from 'layout/PageHeader';
+import { TabLink } from 'layout/header/TabLink';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from 'styles/home.module.scss';
@@ -14,6 +25,57 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <PageHeader />
+        <Container className={styles.content_body} maxWidth='100%'>
+          <Flex align='center' gap='.4rem' mb='1.2rem'>
+            <Image
+              src='/wave_greeting.png'
+              alt='Waving Hand'
+              height={29}
+              width={29}
+            />
+            <Heading fontSize='2rem'>Hi Ahmed</Heading>
+          </Flex>
+          <Text fontSize='1.2rem' fontWeight='400' color={'#3d3d3d'}>
+            Welcome to your Dashboard
+          </Text>
+          <Flex direction='column' gap='2rem' mt='2rem'>
+            <Flex gap='2rem' minH='32.5rem'>
+              <Flex
+                className={`${styles.overview} ${styles.sales_overview}`}
+                flex={856}
+                direction={'column'}
+              >
+                <SalesOverviewSection />
+              </Flex>
+              <Flex gap='1.7rem' direction='column' flex={407}>
+                <Flex
+                  className={`${styles.overview} ${styles.property_overview}`}
+                  flex={1}
+                ></Flex>
+                <Flex
+                  className={`${styles.overview} ${styles.cutomer_overvview}`}
+                  flex={1}
+                ></Flex>
+              </Flex>
+            </Flex>
+            <Flex gap='2rem' minH='32.5rem'>
+              <Flex
+                className={`${styles.overview} ${styles.listings_overview}`}
+                flex={475}
+              >
+                <Heading fontSize='2rem'>Listing Overview</Heading>
+              </Flex>
+              <Flex
+                className={`${styles.overview} ${styles.total_balance}`}
+                flex={418}
+              ></Flex>
+              <Flex
+                className={`${styles.overview} ${styles.top_selling}`}
+                flex={350}
+              ></Flex>
+            </Flex>
+          </Flex>
+        </Container>
       </main>
     </>
   );

@@ -1,5 +1,12 @@
 @import './mixins.module.scss';
 
 .main {
-  background-color: white;
+  background-color: #fbfcfc;
+  min-height: 100vh;
+  .content_body {
+    padding: 1.9rem 7.8rem;
+  }
+  .overview {
+    @include section_container_style;
+  }
 }
